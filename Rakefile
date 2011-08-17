@@ -14,12 +14,12 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "docusign"
-  gem.homepage = "http://github.com/donaldpiret/docusign"
+  gem.name = "docu_sign"
+  gem.homepage = "http://github.com/roomorama/docu_sign"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "donald@donaldpiret.com"
+  gem.summary = %Q{DocuSign API gem}
+  gem.description = %Q{Savon-based gem to interact with the DocuSign SOAP API in Ruby}
+  gem.email = "donald@roomorama.com"
   gem.authors = ["Donald Piret"]
   # dependencies defined in Gemfile
 end
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "docusign #{version}"
+  rdoc.title = "docu_sign #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
