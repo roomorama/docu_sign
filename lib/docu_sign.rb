@@ -1,8 +1,8 @@
 require 'docu_sign/extensions'
 
 require 'savon'
-require 'docu_sign/base'
 
+require 'docu_sign/client'
 require 'docu_sign/anchor_tab'
 require 'docu_sign/document'
 require 'docu_sign/envelope'

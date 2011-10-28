@@ -1,7 +1,6 @@
 module DocuSign
-  class Base
+  class Client
     attr_accessor :client
-
     class << self
       def login(options={})
 
@@ -48,6 +47,12 @@ module DocuSign
 
     def initialize(options={})
       self.client = self.class.login(options)
+    end
+
+    def method_missing(api_method, *args, &block) # :nodoc:
+      self.client.request(api_method, *args)
+    rescue Savon::Error
+      super
     end
   end
 end
