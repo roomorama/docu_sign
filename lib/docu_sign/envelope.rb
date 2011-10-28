@@ -23,7 +23,7 @@ module DocuSign
   class Envelope
     attr_accessor :transaction_id
     attr_accessor :asynchronous
-    attr_accessor :account_dd
+    attr_accessor :account_id
     attr_accessor :documents
     attr_accessor :recipients
     attr_accessor :tabs
