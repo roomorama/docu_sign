@@ -1,0 +1,4 @@
+production:
+  username: "your username"
+  password: "your password"
+  integrator_key: "your integrator key"
