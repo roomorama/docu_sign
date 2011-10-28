@@ -1,5 +1,7 @@
 module DocuSign
   class Base
+    attr_accessor :client
+
     class << self
       def login(options={})
 
@@ -42,6 +44,10 @@ module DocuSign
 
         connection.login(:email => email, :password => password).login_result
       end
+    end
+
+    def initialize(options={})
+      self.client = self.class.login(options)
     end
   end
 end
