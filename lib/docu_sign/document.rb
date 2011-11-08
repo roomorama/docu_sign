@@ -45,3 +45,9 @@ module DocuSign
     end
   end
 end
+
+# {http://www.docusign.net/API/3.0}ArrayOfDocument
+module DocuSign
+  class ArrayOfDocument < ::Array
+  end
+end

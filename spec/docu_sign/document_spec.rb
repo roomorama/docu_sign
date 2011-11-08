@@ -16,7 +16,7 @@ describe DocuSign::Document do
   describe "#tabs" do
     context "with no arguments" do
       it "should return an empty tab array" do
-        @d.tabs.should == DocuSign::ArrayOfTab.new
+        @d.tabs.should == []
       end
     end
 

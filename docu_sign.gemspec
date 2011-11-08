@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
   # s.add_runtime_dependency "rest-client"
   s.add_runtime_dependency "savon"
 
-  s.add_development_dependency "rspec", "~> 2.3.0"
+  s.add_development_dependency "rspec", ">= 2.6.3"
   s.add_development_dependency "rcov"
-  s.add_development_dependency "rails", "3.0.10"
+  s.add_development_dependency "rails", ">= 3.0.10"
   s.add_development_dependency "capybara"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "ruby-debug19"

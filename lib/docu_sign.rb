@@ -13,6 +13,8 @@ require 'docu_sign/tab'
 require 'docu_sign/tab_type_code'
 
 require 'docu_sign/builder/base'
+require 'docu_sign/builder/document_builder'
+require 'docu_sign/builder/recipient_builder'
 require 'docu_sign/builder/tab_builder'
 require 'docu_sign/builder/anchor_builder'
 
