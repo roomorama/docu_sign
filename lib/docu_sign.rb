@@ -1,3 +1,5 @@
+require "docu_sign/version"
+
 require 'docu_sign/extensions'
 
 require 'savon'
@@ -15,3 +17,7 @@ require 'docu_sign/builder/tab_builder'
 require 'docu_sign/builder/anchor_builder'
 
 require 'docu_sign/railtie' if defined?(Rails)
+
+module DocuSign
+  # Your code goes here...
+end
