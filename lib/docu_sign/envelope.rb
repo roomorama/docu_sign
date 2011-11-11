@@ -20,7 +20,7 @@ module DocuSign
   #   enableWetSign - SOAP::SOAPBoolean
   #   allowMarkup - SOAP::SOAPBoolean
   #   eventNotification - Docusign::EventNotification
-  class Envelope
+  class Envelope < DocuSignModel
     attr_accessor :transaction_id
     attr_accessor :asynchronous
     attr_accessor :account_id
@@ -41,31 +41,33 @@ module DocuSign
     attr_accessor :enable_wet_sign
     attr_accessor :allow_markup
     attr_accessor :event_notification
+    attr_accessor :allow_reassign
     attr_writer :document_builder
     attr_writer :recipient_builder
     attr_writer :tab_builder
 
-    def initialize(transaction_id = nil, asynchronous = nil, account_id = nil, documents = nil, recipients = nil, tabs = nil, subject = nil, email_blurb = nil, signing_location = nil, custom_fields = nil, vaulting_options = nil, auto_navigation = nil, envelope_id_stamping = nil, authoritative_copy = nil, notification = nil, envelope_attachment = nil, enforce_signer_visibility = nil, enable_wet_sign = nil, allow_markup = nil, event_notification = nil)
-      @transaction_id = transaction_id
-      @asynchronous = asynchronous
-      @account_id = account_id
-      @documents = documents
-      @recipients = recipients
-      @tabs = tabs
-      @subject = subject
-      @email_blurb = email_blurb
-      @signing_location = signing_location
-      @custom_fields = custom_fields
-      @vaulting_options = vaulting_options
-      @auto_navigation = auto_navigation
-      @envelope_id_stamping = envelope_id_stamping
-      @authoritative_copy = authoritative_copy
-      @notification = notification
-      @envelope_attachment = envelope_attachment
-      @enforce_signer_visibility = enforce_signer_visibility
-      @enable_wet_sign = enable_wet_sign
-      @allow_markup = allow_markup
-      @event_notification = event_notification
+    def initialize(attributes = {})
+      @transaction_id = attributes[:transaction_id]
+      @asynchronous = attributes[:asynchronous]
+      @account_id = attributes[:account_id]
+      @documents = attributes[:documents]
+      @recipients = attributes[:recipients]
+      @tabs = attributes[:tabs]
+      @subject = attributes[:subject]
+      @email_blurb = attributes[:email_blurb]
+      @signing_location = attributes[:signing_location]
+      @custom_fields = attributes[:custom_fields]
+      @vaulting_options = attributes[:vaulting_options]
+      @auto_navigation = attributes[:auto_navigation]
+      @envelope_id_stamping = attributes[:envelope_id_stamping]
+      @authoritative_copy = attributes[:authoritative_copy]
+      @notification = attributes[:notification]
+      @envelope_attachment = attributes[:envelope_attachment]
+      @enforce_signer_visibility = attributes[:enforce_signer_visibility]
+      @enable_wet_sign = attributes[:enable_wet_sign]
+      @allow_markup = attributes[:allow_markup]
+      @event_notification = attributes[:event_notification]
+      @allow_reassign = attributes[:allow_reassign]
     end
 
     ##
@@ -138,6 +140,32 @@ module DocuSign
 
     def tab_builder
       @tab_builder ||= DocuSign::Builder::TabBuilder.new(nil)
+    end
+
+    def to_savon
+      {"Envelope" => {
+        "TransactionID" => self.transaction_id,
+        "Asynchronous" => self.asynchronous?,
+        "AccountId" => self.account_id,
+        "Documents" => self.documents.collect(&:to_savon),
+        "Recipients" => self.recipients.collect(&:to_savon),
+        "Tabs" => self.tabs.collect(&:to_savon),
+        "Subject" => self.subject,
+        "EmailBlurb" => self.email_blurb,
+        "SigningLocation" => self.signing_location,
+        # TODO: CustomFields
+        # TODO: VaultingOptions
+        "AutoNavigation" => self.auto_navigation?,
+        "EnvelopeIDStamping" => self.envelope_id_stamping?,
+        "AuthoritativeCopy" => self.authoritative_copy?,
+        # TODO: EnvelopeAttachment
+        # TODO: Notification
+        "EnforceSignerVisibility" => self.enforce_signer_visibility?,
+        "EnableWetSign" => self.enable_wet_sign?,
+        "AllowMarkup" => self.allow_markup?,
+        # TODO: EventNotification
+        "AllowReassign" => self.allow_reassign?
+      }.delete_if{|key, value| value.nil?}}
     end
 
   end

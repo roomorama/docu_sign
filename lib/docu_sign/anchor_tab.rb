@@ -1,5 +1,5 @@
 module DocuSign
-  class AnchorTab
+  class AnchorTab < DocuSignModel
     alias_attribute :string, :anchorTabString
   end
 end

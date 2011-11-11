@@ -22,7 +22,7 @@ module DocuSign
           tab.tab_label ||= tab.name
 
           # Provide a custom tab type if none has already been provided
-          tab.type ||= DocuSign::TabTypeCode::Custom
+          tab.type ||= "Custom"
         end
       end
     end

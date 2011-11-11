@@ -1,5 +1,5 @@
 module DocuSign
-  class Document
+  class Document < DocuSignModel
     attr_accessor :tabs
     attr_accessor :id
     attr_accessor :name
@@ -11,15 +11,15 @@ module DocuSign
     attr_accessor :attachment_description
     attr_writer :tab_builder
 
-    def initialize(id = nil, name = nil, pdf_bytes = nil, password = nil, transform_pdf_fields = nil, file_extension = nil, match_boxes = nil, attachment_description = nil)
-      @id = id
-      @name = name
-      @pdf_bytes = pdf_bytes
-      @password = password
-      @transform_pdf_fields = transform_pdf_fields
-      @file_extension = file_extension
-      @match_boxes = match_boxes
-      @attachment_description = attachment_description
+    def initialize(attributes = {})
+      @id = attributes[:id]
+      @name = attributes[:name]
+      @pdf_bytes = attributes[:pdf_bytes]
+      @password = attributes[:password]
+      @transform_pdf_fields = attributes[:transform_pdf_fields]
+      @file_extension = attributes[:file_extension]
+      @match_boxes = attributes[:match_boxes]
+      @attachment_description = attributes[:attachment_description]
     end
 
     def tabs(recipient = nil, &block)
@@ -42,6 +42,19 @@ module DocuSign
 
     def tab_builder
       @tab_builder ||= DocuSign::Builder::TabBuilder.new(self)
+    end
+
+    def to_savon
+      {"Document" => {
+        "ID" => self.id,
+        "Name" => self.name,
+        "PDFBytes" => self.pdf_bytes,
+        "Password" => self.password,
+        "TransformPdfFields" => self.transform_pdf_fields,
+        "FileExtension" => self.file_extension,
+        "MatchBoxes" => self.match_boxes,
+        "AttachmentDescription" => self.attachment_description
+      }.delete_if{|key, value| value.nil?}}
     end
   end
 end
