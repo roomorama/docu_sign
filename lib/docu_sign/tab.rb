@@ -85,7 +85,7 @@ module DocuSign
     end
 
     def anchor(options = {}, &block)
-      returning anchor_builder.build(options, &block) do |a|
+      anchor_builder.build(options, &block).tap do |a|
         yield a if block_given?
         self.anchor_tab_item = a
       end
@@ -115,7 +115,7 @@ module DocuSign
         "XPosition" => self.x_position,
         "YPosition" => self.y_position,
         "ScaleValue" => self.scale_value,
-        # TODO: AnchorTabItem
+        "AnchorTabItem" => self.anchor_tab_item.try(:to_savon),
         "Type" => self.type,
         "Name" => self.name,
         "TabLabel" => self.tab_label,
@@ -123,22 +123,22 @@ module DocuSign
         "CustomTabType" => self.custom_tab_type,
         "CustomTabWidth" => self.custom_tab_width,
         "CustomTabHeight" => self.custom_tab_height,
-        "CustomTabRequired" => self.custom_tab_required,
-        "ConcealValueOnDocument" => self.conceal_value_on_document,
-        "CustomTabLocked" => self.custom_tab_locked,
-        "CustomTabDisableAutoSize" => self.custom_tab_disable_auto_size,
+        "CustomTabRequired" => self.custom_tab_required?,
+        "ConcealValueOnDocument" => self.conceal_value_on_document?,
+        "CustomTabLocked" => self.custom_tab_locked?,
+        "CustomTabDisableAutoSize" => self.custom_tab_disable_auto_size?,
         "CustomTabListItems" => self.custom_tab_list_items,
         "CustomTabListValues" => self.custom_tab_list_values,
         "CustomTabListSelectedValue" => self.custom_tab_list_selected_value,
         "CustomTabRadioGroupName" => self.custom_tab_radio_group_name,
         "CustomTabValidationPattern" => self.custom_tab_validation_pattern,
         "CustomTabValidationMessage" => self.custom_tab_validation_message,
-        "TemplateLocked" => self.template_locked,
-        "TemplateRequired" => self.template_required,
+        "TemplateLocked" => self.template_locked?,
+        "TemplateRequired" => self.template_required?,
         "ConditionalParentLabel" => self.conditional_parent_label,
         "ConditionalParentValue" => self.conditional_parent_value,
-        "SharedTab" => self.shared_tab,
-        "RequireInitialOnSharedTabChange" => self.require_initial_on_shared_tab_change,
+        "SharedTab" => self.shared_tab?,
+        "RequireInitialOnSharedTabChange" => self.require_initial_on_shared_tab_change?,
         "Font" => self.font,
         "Bold" => self.bold,
         "Italic" => self.italic,

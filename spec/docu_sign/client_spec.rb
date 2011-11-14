@@ -41,7 +41,14 @@ describe DocuSign::Client do
           :page_number => 1,
           :x_position => 100,
           :y_position => 600,
-          :type => "SignHere"
+          :type => "SignHere",
+          :anchor => {
+            :string => "Signature:",
+            :x => "200",
+            :y => 0,
+            :unit => "Pixels",
+            :ignore_if_not_present => false
+          }
       end
       @client.create_and_send_envelope(envelope)
     end
