@@ -18,13 +18,13 @@ module DocuSign
     end
 
     def to_savon
-      {"AnchorTab" => {
+      {
         "AnchorTabString" => self.anchor_tab_string,
         "XOffset" => self.x_offset,
         "YOffset" => self.y_offset,
         "Unit" => self.unit,
         "IgnoreIfNotPresent" => self.ignore_if_not_present?
-      }}
+      }
     end
   end
 end

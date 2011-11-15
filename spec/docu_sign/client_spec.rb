@@ -43,13 +43,14 @@ describe DocuSign::Client do
           :y_position => 600,
           :type => "SignHere",
           :anchor => {
-            :string => "Signature:",
+            :string => "blank",
             :x => "200",
             :y => 0,
             :unit => "Pixels",
             :ignore_if_not_present => false
           }
       end
+      puts envelope.to_savon.inspect
       @client.create_and_send_envelope(envelope)
     end
   end
