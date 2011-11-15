@@ -6,6 +6,8 @@ module DocuSign
     attr_accessor :unit
     attr_accessor :ignore_if_not_present
     alias_attribute :string, :anchor_tab_string
+    alias_attribute :x, :x_offset
+    alias_attribute :y, :y_offset
 
     def initialize(attributes = {})
       @anchor_tab_string = attributes[:string] || attributes[:anchor_tab_string]
