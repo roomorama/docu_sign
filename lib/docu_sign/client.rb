@@ -52,7 +52,7 @@ module DocuSign
     def method_missing(api_method, *args, &block) # :nodoc:
       if self.client.wsdl.soap_actions.include?(api_method)
         self.client.request(api_method) do
-          soap.body = args.first.to_savon if args.first
+          soap.body = (args.first.respond_to?(:to_savon) ? args.first.to_savon : args.first) if args.first
         end
       else
         super
