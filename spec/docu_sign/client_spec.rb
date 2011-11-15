@@ -50,7 +50,6 @@ describe DocuSign::Client do
             :ignore_if_not_present => false
           }
       end
-      puts envelope.to_savon.inspect
       @client.create_and_send_envelope(envelope)
     end
   end
