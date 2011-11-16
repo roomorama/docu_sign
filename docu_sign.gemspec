@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
-  s.add_runtime_dependency "savon"
+  s.add_runtime_dependency "savon", ">= 1.0.0"
 
   s.add_development_dependency "rspec", ">= 2.6.3"
   s.add_development_dependency "rcov"
@@ -29,4 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "capybara"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "ruby-debug19"
+  s.add_development_dependency "webmock", ">= 1.7.0"
+  s.add_development_dependency "savon_spec", ">= 1.0.0"
+  s.add_development_dependency "vcr"
 end

@@ -22,11 +22,14 @@ Capybara.default_selector = :css
 # Run any available migration
 ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
 
+require 'webmock/rspec'
+require 'vcr'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-
+  config.include Savon::Spec::Macros
+  config.extend VCR::RSpec::Macros
 end

@@ -1,10 +1,9 @@
 module DocuSign
   class AnchorTab < DocuSignModel
-    attr_accessor :anchor_tab_string
-    attr_accessor :x_offset
-    attr_accessor :y_offset
-    attr_accessor :unit
-    attr_accessor :ignore_if_not_present
+    ATTRIBUTES = [:anchor_tab_string, :x_offset, :y_offset, :unit, :ignore_if_not_present]
+    ATTRIBUTES.each do |attr|
+      self.send(:attr_accessor, attr)
+    end
     alias_attribute :string, :anchor_tab_string
     alias_attribute :x, :x_offset
     alias_attribute :y, :y_offset

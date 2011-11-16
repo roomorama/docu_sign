@@ -1,5 +1,13 @@
 module DocuSign
   class DocuSignModel
+    ATTRIBUTES = []
+
+    def initialize(attributes = {})
+      ATTRIBUTES.each do |attr|
+        self.send("#{attr}=", attributes[attr])
+      end
+    end
+
     def to_savon
       {}
     end

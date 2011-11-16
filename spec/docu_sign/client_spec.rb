@@ -10,6 +10,7 @@ describe DocuSign::Client do
   end
 
   describe "create_and_send_envelope" do
+    use_vcr_cassette :create_and_send_envelope
     it "should successfully create and send a simple envelope" do
       envelope = DocuSign::Envelope.new.tap do |e|
         e.transaction_id = "Test#{Time.now.to_i.to_s}"
@@ -40,7 +41,7 @@ describe DocuSign::Client do
           :recipient_id => 1,
           :page_number => 1,
           :x_position => 100,
-          :y_position => 600,
+          :y_position => 200,
           :type => "SignHere",
           :anchor => {
             :string => "blank",
@@ -50,7 +51,8 @@ describe DocuSign::Client do
             :ignore_if_not_present => false
           }
       end
-      @client.create_and_send_envelope(envelope)
+      result = @client.create_and_send_envelope(envelope)
+      result.should be_an_instance_of(DocuSign::EnvelopeStatus)
     end
   end
 

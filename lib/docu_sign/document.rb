@@ -1,25 +1,16 @@
 module DocuSign
   class Document < DocuSignModel
-    attr_accessor :tabs
-    attr_accessor :id
-    attr_accessor :name
-    attr_accessor :pdf_bytes
-    attr_accessor :password
-    attr_accessor :transform_pdf_fields
-    attr_accessor :file_extension
-    attr_accessor :match_boxes
-    attr_accessor :attachment_description
+    ATTRIBUTES = [:tabs, :id, :name, :pdf_bytes, :password, :transform_pdf_fields, :file_extension, :match_boxes,
+      :attachment_description]
+    ATTRIBUTES.each do |attr|
+      self.send(:attr_accessor, attr)
+    end
     attr_writer :tab_builder
 
     def initialize(attributes = {})
-      @id = attributes[:id]
-      @name = attributes[:name]
-      @pdf_bytes = attributes[:pdf_bytes]
-      @password = attributes[:password]
-      @transform_pdf_fields = attributes[:transform_pdf_fields]
-      @file_extension = attributes[:file_extension]
-      @match_boxes = attributes[:match_boxes]
-      @attachment_description = attributes[:attachment_description]
+      ATTRIBUTES.each do |attr|
+        self.send("#{attr}=", attributes[attr])
+      end
     end
 
     def tabs(recipient = nil, &block)
