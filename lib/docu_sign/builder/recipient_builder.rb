@@ -7,11 +7,11 @@ module DocuSign
         super
       end
 
-      def build(options = {}, &block)
-
-        super(options, &block).tap do |recipient|
-        end
-      end
+      #def build(options = {}, &block)
+      #
+      #  super(options, &block).tap do |recipient|
+      #  end
+      #end
     end
   end
 end

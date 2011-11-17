@@ -12,6 +12,7 @@ require 'docu_sign/authentication_status'
 require 'docu_sign/document'
 require 'docu_sign/envelope'
 require 'docu_sign/envelope_status'
+require 'docu_sign/notification'
 require 'docu_sign/recipient'
 require 'docu_sign/recipient_status'
 require 'docu_sign/tab'
@@ -22,6 +23,7 @@ require 'docu_sign/builder/document_builder'
 require 'docu_sign/builder/recipient_builder'
 require 'docu_sign/builder/tab_builder'
 require 'docu_sign/builder/anchor_builder'
+require 'docu_sign/builder/notification_builder'
 
 require 'docu_sign/railtie' if defined?(Rails)
 

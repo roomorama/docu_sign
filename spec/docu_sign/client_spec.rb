@@ -17,6 +17,19 @@ describe DocuSign::Client do
         e.account_id = "678cce00-95a7-4279-9101-557b3868d7aa"
         e.asynchronous = false
         e.subject = "Test Envelope"
+        e.notification do |n|
+          n.use_account_defaults = false
+          n.reminders = {
+            :reminder_enabled => true,
+            :reminder_delay => 2,
+            :reminder_frequency => 2
+          }
+          n.expirations = {
+            :expire_enabled => true,
+            :expire_after => 10,
+            :expire_warn => 2
+          }
+        end
       end
       # Documents
       envelope.documents do |e|
@@ -51,6 +64,7 @@ describe DocuSign::Client do
             :ignore_if_not_present => false
           }
       end
+      puts envelope.notification.inspect
       result = @client.create_and_send_envelope(envelope)
       result.should be_an_instance_of(DocuSign::EnvelopeStatus)
     end

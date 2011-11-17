@@ -11,6 +11,7 @@ module DocuSign
     attr_writer :document_builder
     attr_writer :recipient_builder
     attr_writer :tab_builder
+    attr_writer :notification_builder
 
     def initialize(attributes = {})
       ATTRIBUTES.each do |attr|
@@ -90,6 +91,14 @@ module DocuSign
       @tab_builder ||= DocuSign::Builder::TabBuilder.new(nil)
     end
 
+    def notification(options = {}, &block)
+      @notification ||= notification_builder.build(options, &block)
+    end
+
+    def notification_builder
+      @notification_builder ||= DocuSign::Builder::NotificationBuilder.new
+    end
+
     def to_savon
       {"Envelope" => {
         "TransactionID" => self.transaction_id,
@@ -107,7 +116,7 @@ module DocuSign
         "EnvelopeIDStamping" => self.envelope_id_stamping?,
         "AuthoritativeCopy" => self.authoritative_copy?,
         # TODO: EnvelopeAttachment
-        # TODO: Notification
+        "Notification" => self.notification.try(:to_savon),
         "EnforceSignerVisibility" => self.enforce_signer_visibility?,
         "EnableWetSign" => self.enable_wet_sign?,
         "AllowMarkup" => self.allow_markup?,

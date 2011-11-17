@@ -6,12 +6,11 @@ module DocuSign
       def initialize()
         super
       end
-
-      def build(options = {}, &block)
-
-        super(options, &block).tap do |document|
-        end
-      end
+      #def build(options = {}, &block)
+      #
+      #  super(options, &block).tap do |document|
+      #  end
+      #end
     end
   end
 end
