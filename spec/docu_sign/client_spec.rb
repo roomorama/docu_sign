@@ -80,6 +80,23 @@ describe DocuSign::Client do
       result = @client.create_and_send_envelope(envelope)
       result.should be_an_instance_of(DocuSign::EnvelopeStatus)
     end
+
+  end
+
+  describe "invalid requests" do
+    use_vcr_cassette :invalid_request
+
+    before do
+      @envelope = DocuSign::Envelope.new.tap do |e|
+        e.transaction_id = "Test#{Time.now.to_i.to_s}"
+        e.account_id = "678cce00-95a7-4279-9101-557b3868d7aa"
+        e.asynchronous = false
+      end
+    end
+
+    it "should successfully raise an error" do
+      lambda{ @client.create_and_send_envelope(@envelope) }.should raise_exception(DocuSign::Error)
+    end
   end
 
 end
