@@ -18,7 +18,7 @@ module DocuSign
     end
 
     def to_savon
-      {"Recipient" => {
+      {
         "ID" => self.id,
         "UserName" => self.user_name,
         "SignerName" => self.signer_name,
@@ -51,7 +51,7 @@ module DocuSign
         "TemplateAccessCodeRequired" => self.template_access_code_required,
         "DefaultRecipient" => self.default_recipient
         # TODO: EmailNotification
-      }.delete_if{|key, value| value.nil?}}
+      }.delete_if{|key, value| value.nil?}
     end
   end
 

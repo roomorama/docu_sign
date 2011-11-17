@@ -104,9 +104,15 @@ module DocuSign
         "TransactionID" => self.transaction_id,
         "Asynchronous" => self.asynchronous?,
         "AccountId" => self.account_id,
-        "Documents" => self.documents.collect(&:to_savon),
-        "Recipients" => self.recipients.collect(&:to_savon),
-        "Tabs" => self.tabs.collect(&:to_savon),
+        "Documents" => {
+          "Document" => self.documents.collect(&:to_savon)
+        },
+        "Recipients" => {
+          "Recipient" => self.recipients.collect(&:to_savon)
+        },
+        "Tabs" => {
+          "Tab" => self.tabs.collect(&:to_savon)
+        },
         "Subject" => self.subject,
         "EmailBlurb" => self.email_blurb,
         "SigningLocation" => self.signing_location,

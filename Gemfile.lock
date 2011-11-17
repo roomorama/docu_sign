@@ -23,6 +23,7 @@ PATH
   remote: .
   specs:
     docu_sign (0.0.1)
+      builder
       savon (>= 1.0.0)
 
 GEM

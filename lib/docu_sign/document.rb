@@ -36,7 +36,7 @@ module DocuSign
     end
 
     def to_savon
-      {"Document" => {
+      {
         "ID" => self.id,
         "Name" => self.name,
         "PDFBytes" => self.pdf_bytes,
@@ -45,7 +45,7 @@ module DocuSign
         "FileExtension" => self.file_extension,
         "MatchBoxes" => self.match_boxes,
         "AttachmentDescription" => self.attachment_description
-      }.delete_if{|key, value| value.nil?}}
+      }.delete_if{|key, value| value.nil?}
     end
   end
 end

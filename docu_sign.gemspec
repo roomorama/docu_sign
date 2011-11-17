@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
   s.add_runtime_dependency "savon", ">= 1.0.0"
+  s.add_runtime_dependency "builder"
 
   s.add_development_dependency "rspec", ">= 2.6.3"
   s.add_development_dependency "rcov"

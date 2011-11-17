@@ -15,10 +15,10 @@ module DocuSign
     end
 
     def tab_statuses=(status_attributes)
-      if status_attributes.is_a?(Hash)
+      if status_attributes && status_attributes[:tab_status].is_a?(Hash)
         @tab_statuses = [DocuSign::TabStatus.new(status_attributes[:tab_status])]
-      elsif status_attributes.is_a?(Array)
-        @tab_statuses = status_attributes.map{|attributes| DocuSign::TabStatus.new(attributes[:tab_status])}
+      elsif status_attributes && status_attributes[:tab_status].is_a?(Array)
+        @tab_statuses = status_attributes[:tab_status].map{|attributes| DocuSign::TabStatus.new(attributes)}
       end
     end
   end

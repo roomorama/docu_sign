@@ -10,7 +10,7 @@ describe DocuSign::Client do
   end
 
   describe "create_and_send_envelope" do
-    use_vcr_cassette :create_and_send_envelope
+    use_vcr_cassette :create_and_send_envelope, :record => :new_episodes
     it "should successfully create and send a simple envelope" do
       envelope = DocuSign::Envelope.new.tap do |e|
         e.transaction_id = "Test#{Time.now.to_i.to_s}"
@@ -63,8 +63,20 @@ describe DocuSign::Client do
             :unit => "Pixels",
             :ignore_if_not_present => false
           }
+        e.tab :document_id => 1,
+          :recipient_id => 1,
+          :page_number => 1,
+          :x_position => 100,
+          :y_position => 200,
+          :type => "SignerAttachment",
+          :anchor => {
+            :string => "blank",
+            :x => "200",
+            :y => 0,
+            :unit => "Pixels",
+            :ignore_if_not_present => false
+          }
       end
-      puts envelope.notification.inspect
       result = @client.create_and_send_envelope(envelope)
       result.should be_an_instance_of(DocuSign::EnvelopeStatus)
     end

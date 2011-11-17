@@ -14,18 +14,18 @@ module DocuSign
     end
 
     def recipient_statuses=(status_attributes)
-      if status_attributes.is_a?(Hash)
+      if status_attributes && status_attributes[:recipient_status].is_a?(Hash)
         @recipient_statuses = [RecipientStatus.new(status_attributes[:recipient_status])]
-      elsif status_attributes.is_a?(Array)
-        @recipient_statuses = status_attributes.map{|attributes| DocuSign::RecipientStatus.new(attributes[:recipient_status])}
+      elsif status_attributes && status_attributes[:recipient_status].is_a?(Array)
+        @recipient_statuses = status_attributes[:recipient_status].map{|attributes| DocuSign::RecipientStatus.new(attributes)}
       end
     end
 
     def document_statuses=(status_attributes)
-      if status_attributes.is_a?(Hash)
+      if status_attributes && status_attributes[:document_status].is_a?(Hash)
         @document_statuses = [DocumentStatus.new(status_attributes[:document_status])]
-      elsif status_attributes.is_a?(Array)
-        @document_statuses = status_attributes.map{|attributes| DocuSign::DocumentStatus.new(attributes[:document_status])}
+      elsif status_attributes && status_attributes[:document_status].is_a?(Array)
+        @document_statuses = status_attributes[:document_status].map{|attributes| DocuSign::DocumentStatus.new(attributes)}
       end
     end
 

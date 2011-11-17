@@ -3,6 +3,7 @@ require "docu_sign/version"
 require 'docu_sign/extensions'
 
 require 'savon'
+require 'builder'
 
 require 'docu_sign/client'
 require 'docu_sign/docu_sign_model'

@@ -45,7 +45,7 @@ module DocuSign
     end
 
     def to_savon
-      {"Tab" => {
+      {
         "DocumentID" => self.document_id,
         "RecipientID" => self.recipient_id,
         "PageNumber" => self.page_number,
@@ -83,8 +83,8 @@ module DocuSign
         "FontColor" => self.font_color,
         "FontSize" => self.font_size,
         "MergeFieldXml" => self.merge_field_xml,
-        "IncludeNoteInEmail" => self.include_note_in_email
-      }.delete_if{|key, value| value.nil?}}
+        "IncludeNoteInEmail" => self.include_note_in_email?
+      }.delete_if{|key, value| value.nil?}
     end
   end
 end
