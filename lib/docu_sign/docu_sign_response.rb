@@ -7,9 +7,11 @@ module DocuSign
       case response.to_hash.keys.first.to_sym
         when :create_and_send_envelope_response
           return EnvelopeStatus.new(response.to_hash[:create_and_send_envelope_response][:create_and_send_envelope_result])
+        when :request_envelope_response
+          return Envelope.new(response.to_hash[:request_envelope_response][:request_envelope_result])
         else
-          o = allocate
-          o.__send__(:initialize, *args)
+          puts response.to_hash.inspect
+          super
       end
     end
   end
