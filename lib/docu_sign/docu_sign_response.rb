@@ -15,6 +15,8 @@ module DocuSign
           return Envelope.new(response.to_hash[:request_envelope_response][:request_envelope_result])
         when :correct_and_resend_envelope_response
           return nil
+        when :request_document_pd_fs_ex_response
+          return response.to_hash[:request_document_pd_fs_ex_response][:request_document_pd_fs_ex_result][:document_pdf].map {|document_pdf_attributes| DocumentPDF.new(document_pdf_attributes)}
         else
           puts response.to_hash.inspect
           super
