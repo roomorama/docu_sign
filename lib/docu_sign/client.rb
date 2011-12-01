@@ -4,9 +4,11 @@ module DocuSign
     class << self
       def login(options={})
 
-        client  = Savon::Client.new do
+        client  = Savon::Client.new do |wsdl, http|
           wsdl.document = File.expand_path("../../../wsdl/dsapi.wsdl", __FILE__)
           wsdl.endpoint = options[:endpoint_url] if options[:endpoint_url]
+          http.ca_path = '/etc/ssl/certs' if File.exists?('/etc/ssl/certs') #Ubuntu
+          http.ca_file = '/opt/local/share/curl/curl-ca-bundle.crt' if File.exists?('/opt/local/share/curl/curl-ca-bundle.crt') # Mac OS X
         end
 
         if options[:integrator_key]
