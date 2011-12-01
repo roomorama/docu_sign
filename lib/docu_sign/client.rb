@@ -7,7 +7,7 @@ module DocuSign
         client  = Savon::Client.new do |wsdl, http|
           wsdl.document = File.expand_path("../../../wsdl/dsapi.wsdl", __FILE__)
           wsdl.endpoint = options[:endpoint_url] if options[:endpoint_url]  
-          #http.auth.ssl.verify_mode = :none
+          http.auth.ssl.verify_mode = :none
         end
 
         if options[:integrator_key]
