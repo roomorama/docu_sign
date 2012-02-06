@@ -21,6 +21,7 @@ require 'docu_sign/recipient'
 require 'docu_sign/recipient_status'
 require 'docu_sign/tab'
 require 'docu_sign/tab_status'
+require 'docu_sign/void_envelope_status'
 
 require 'docu_sign/builder/base'
 require 'docu_sign/builder/document_builder'

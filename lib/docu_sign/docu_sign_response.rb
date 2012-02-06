@@ -13,6 +13,8 @@ module DocuSign
           return EnvelopeStatus.new(response.to_hash[:request_status_ex_response][:request_status_ex_result])
         when :request_envelope_response
           return Envelope.new(response.to_hash[:request_envelope_response][:request_envelope_result])
+        when :void_envelope_response
+          return VoidEnvelopeStatus.new(response.to_hash[:void_envelope_response][:void_envelope_result])
         when :correct_and_resend_envelope_response
           return nil
         when :request_document_pd_fs_ex_response
