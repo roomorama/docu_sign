@@ -162,5 +162,11 @@ describe "Status and Managing functions" do
       @void.should be_an_instance_of(DocuSign::VoidEnvelopeStatus)
       @void.void_success.should be_true
     end
+
+    it "should work with snake case input parameters" do
+      @void = @client.void_envelope(:envelope_id => @envelope_id, :reason => "Booking Cancelled")
+      @void.should be_an_instance_of(DocuSign::VoidEnvelopeStatus)
+      @void.void_success.should be_true
+    end
   end
 end

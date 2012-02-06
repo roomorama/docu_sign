@@ -54,7 +54,7 @@ module DocuSign
       if self.client.wsdl.soap_actions.include?(api_method)
         begin
           response = self.client.request(api_method) do
-            soap.body = (args.first.respond_to?(:to_savon) ? args.first.to_savon : args.first) if args.first
+            soap.body = (args.first.respond_to?(:to_savon) ? args.first.to_savon : convert_hash_keys(args.first)) if args.first
           end
           return DocuSignResponse.new(response)
         rescue Savon::SOAP::Fault => e
@@ -64,5 +64,24 @@ module DocuSign
         super
       end
     end
+
+    private
+
+    def camelize_key(k)
+      k.to_s.gsub(/(^|_)(id)($|_)/){ $2.upcase }.gsub(/\/(.?)/) { "::" + $1.upcase }.gsub(/(^|_)(.)/) { $2.upcase }
+    end
+
+    def convert_hash_keys(value)
+      case value
+      when Array
+        value.map { |v| convert_hash_keys(v) }
+        # or `value.map(&method(:convert_hash_keys))`
+      when Hash
+        Hash[value.map { |k, v| [camelize_key(k), convert_hash_keys(v)] }]
+      else
+        value
+      end
+    end
+
   end
 end
