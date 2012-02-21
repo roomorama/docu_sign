@@ -15,7 +15,11 @@ module DocuSign
           wsdl.endpoint = options[:endpoint_url] if options[:endpoint_url]  
           http.auth.ssl.ca_cert_file = CACERT
           http.auth.ssl.verify_mode = :none
+          http.open_timeout = 300
+          http.read_timeout = 300
         end
+
+
 
         if options[:integrator_key]
           client.wsse.credentials "[#{options[:integrator_key]}]#{options[:username]}", options[:password]
