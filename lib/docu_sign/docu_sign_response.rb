@@ -21,7 +21,7 @@ module DocuSign
           return response.to_hash[:request_document_pd_fs_ex_response][:request_document_pd_fs_ex_result][:document_pdf].map {|document_pdf_attributes| DocumentPDF.new(document_pdf_attributes)}
         else
           puts response.to_hash.inspect
-          super
+          return response
       end
     end
   end

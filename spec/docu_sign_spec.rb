@@ -13,6 +13,8 @@ describe "DocuSign" do
   end
 
   context "with a client objects" do
+    use_vcr_cassette :ping
+
     before do
       @docusign = DocuSign::Client.new(
         :username => "6032ec74-7bcc-4b35-bbb9-3bf8a44484f4",
