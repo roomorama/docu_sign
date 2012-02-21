@@ -14,7 +14,7 @@ module DocuSign
           wsdl.document = File.expand_path("../../../wsdl/dsapi.wsdl", __FILE__)
           wsdl.endpoint = options[:endpoint_url] if options[:endpoint_url]  
           http.auth.ssl.ca_cert_file = CACERT
-          http.auth.ssl.verify_mode = :peer
+          http.auth.ssl.verify_mode = :none
         end
 
         if options[:integrator_key]
