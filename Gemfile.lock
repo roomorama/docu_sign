@@ -178,7 +178,7 @@ DEPENDENCIES
   rcov
   rspec (>= 2.6.3)
   ruby-debug19
-  savon (>= 1.0.0)!
+  savon (>= 0.9.9)!
   savon_spec (>= 1.0.0)!
   sqlite3
   vcr
