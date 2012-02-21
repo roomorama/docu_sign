@@ -15,8 +15,8 @@ module DocuSign
           wsdl.endpoint = options[:endpoint_url] if options[:endpoint_url]  
           http.auth.ssl.ca_cert_file = CACERT
           http.auth.ssl.verify_mode = :none
-          http.open_timeout = 300
-          http.read_timeout = 300
+          http.open_timeout = 1200
+          http.read_timeout = 1200
         end
 
 
