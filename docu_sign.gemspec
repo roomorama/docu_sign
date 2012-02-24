@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{DocuSign API gem}
   s.description = %q{Savon-based gem to interact with the DocuSign SOAP API in Ruby}
+  s.license = "MIT"
 
   s.rubyforge_project = "docu_sign"
 
