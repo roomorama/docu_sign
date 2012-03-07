@@ -8,7 +8,7 @@
       xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.docusign.net/API/3.0"><env:Header><wsse:Security
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
       wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b]6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</wsse:Username><wsse:Password
-      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">roomorama</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAndSendEnvelope><ins0:Envelope><ins0:TransactionID>Test1321516224</ins0:TransactionID><ins0:Asynchronous>false</ins0:Asynchronous><ins0:AccountId>678cce00-95a7-4279-9101-557b3868d7aa</ins0:AccountId><ins0:Documents><ins0:Document><wsdl:ID>1</wsdl:ID><wsdl:Name>Document</wsdl:Name><wsdl:PDFBytes>JVBERi0xLjQNJeLjz9MNCjYgMCBvYmo8PC9IWzUxNiAxNDFdL0xpbmVhcml6
+      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">roomorama</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAndSendEnvelope><ins0:Envelope><ins0:TransactionID>Test1329799226</ins0:TransactionID><ins0:Asynchronous>false</ins0:Asynchronous><ins0:AccountId>678cce00-95a7-4279-9101-557b3868d7aa</ins0:AccountId><ins0:Documents><ins0:Document><wsdl:ID>1</wsdl:ID><wsdl:Name>Document</wsdl:Name><wsdl:PDFBytes>JVBERi0xLjQNJeLjz9MNCjYgMCBvYmo8PC9IWzUxNiAxNDFdL0xpbmVhcml6
 
       ZWQgMS9FIDQ1MzQvTCA4MzU3L04gMS9PIDkvVCA4MTkxPj4NZW5kb2JqDSAg
 
@@ -522,7 +522,7 @@
       cache-control:
       - private, max-age=0
       content-length:
-      - '2730'
+      - '2723'
       content-type:
       - text/xml; charset=utf-8
       server:
@@ -532,7 +532,7 @@
       x-powered-by:
       - ASP.NET
       date:
-      - Thu, 17 Nov 2011 07:50:27 GMT
+      - Tue, 21 Feb 2012 04:40:28 GMT
       set-cookie:
       - BIGipDocuSign=1440262336.47873.0000; path=/
       vary:
@@ -540,14 +540,14 @@
     body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
       xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://www.docusign.net/API/3.0/CreateAndSendEnvelopeResponse</wsa:Action><wsa:MessageID>urn:uuid:388461bb-c4e2-469e-b99d-bbe4d7d9bbac</wsa:MessageID><wsa:RelatesTo>urn:uuid:210807b4-633f-4f0b-9fdf-168ce003f079</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
-      wsu:Id="Timestamp-d4c8bb06-eaa3-4215-9278-326cbc99f780"><wsu:Created>2011-11-17T07:50:27Z</wsu:Created><wsu:Expires>2011-11-17T07:55:27Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><CreateAndSendEnvelopeResponse
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://www.docusign.net/API/3.0/CreateAndSendEnvelopeResponse</wsa:Action><wsa:MessageID>urn:uuid:ae02928d-8890-4ad8-97ae-3897b5914055</wsa:MessageID><wsa:RelatesTo>urn:uuid:43719265-0d67-410d-ad78-b3ebbffc85a5</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+      wsu:Id="Timestamp-93b54f37-83f6-4835-b7bb-0b790742a7c7"><wsu:Created>2012-02-21T04:40:28Z</wsu:Created><wsu:Expires>2012-02-21T04:45:28Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><CreateAndSendEnvelopeResponse
       xmlns="http://www.docusign.net/API/3.0"><CreateAndSendEnvelopeResult><RecipientStatuses><RecipientStatus><Type>Signer</Type><Email>donald@donaldpiret.com</Email><UserName>Recipient
-      1</UserName><RoutingOrder>1</RoutingOrder><Sent>2011-11-16T23:50:27.307</Sent><DeclineReason
+      1</UserName><RoutingOrder>1</RoutingOrder><Sent>2012-02-20T20:40:28.38</Sent><DeclineReason
       xsi:nil="true" /><Status>Sent</Status><RecipientIPAddress /><CustomFields /><TabStatuses><TabStatus><TabType>SignHere</TabType><Status>Active</Status><XPosition>777</XPosition><YPosition>68</YPosition><TabLabel>Sign
       Here</TabLabel><TabName>SignHere</TabName><TabValue /></TabStatus><TabStatus><TabType>SignerAttachment</TabType><Status>Active</Status><XPosition>785</XPosition><YPosition>158</YPosition><TabLabel
-      /><TabName>SignerAttachment</TabName><TabValue /></TabStatus></TabStatuses></RecipientStatus></RecipientStatuses><TimeGenerated>2011-11-16T23:50:27.8047296-08:00</TimeGenerated><EnvelopeID>364df96f-a61c-462e-be40-f04275f90dda</EnvelopeID><Subject>Test
-      Envelope</Subject><UserName>Donald Piret</UserName><Email>donald@roomorama.com</Email><Status>Sent</Status><Created>2011-11-16T23:50:26.93</Created><Sent>2011-11-16T23:50:27.32</Sent><ACStatus>Original</ACStatus><ACStatusDate>2011-11-16T23:50:26.93</ACStatusDate><ACHolder>Donald
-      Piret</ACHolder><ACHolderEmail>donald@roomorama.com</ACHolderEmail><ACHolderLocation>DocuSign</ACHolderLocation><SigningLocation>Online</SigningLocation><SenderIPAddress>182.55.247.94  </SenderIPAddress><EnvelopePDFHash
-      /><CustomFields /><AutoNavigation>true</AutoNavigation><EnvelopeIdStamping>true</EnvelopeIdStamping><AuthoritativeCopy>false</AuthoritativeCopy></CreateAndSendEnvelopeResult></CreateAndSendEnvelopeResponse></soap:Body></soap:Envelope>
+      /><TabName>SignerAttachment</TabName><TabValue /></TabStatus></TabStatuses></RecipientStatus></RecipientStatuses><TimeGenerated>2012-02-20T20:40:28.832108</TimeGenerated><EnvelopeID>bac6d83a-6f89-4df2-a80f-58658d96afd5</EnvelopeID><Subject>Test
+      Envelope</Subject><UserName>Donald Piret</UserName><Email>donald@roomorama.com</Email><Status>Sent</Status><Created>2012-02-20T20:40:28.02</Created><Sent>2012-02-20T20:40:28.397</Sent><ACStatus>Original</ACStatus><ACStatusDate>2012-02-20T20:40:28.02</ACStatusDate><ACHolder>Donald
+      Piret</ACHolder><ACHolderEmail>donald@roomorama.com</ACHolderEmail><ACHolderLocation>DocuSign</ACHolderLocation><SigningLocation>Online</SigningLocation><SenderIPAddress>182.55.247.174
+      </SenderIPAddress><EnvelopePDFHash /><CustomFields /><AutoNavigation>true</AutoNavigation><EnvelopeIdStamping>true</EnvelopeIdStamping><AuthoritativeCopy>false</AuthoritativeCopy></CreateAndSendEnvelopeResult></CreateAndSendEnvelopeResponse></soap:Body></soap:Envelope>
     http_version: '1.1'

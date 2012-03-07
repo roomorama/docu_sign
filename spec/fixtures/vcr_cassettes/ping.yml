@@ -36,7 +36,7 @@
       x-powered-by:
       - ASP.NET
       date:
-      - Tue, 21 Feb 2012 03:41:49 GMT
+      - Tue, 21 Feb 2012 04:40:42 GMT
       set-cookie:
       - BIGipDocuSign=1423485120.47873.0000; path=/
       vary:
@@ -44,7 +44,7 @@
     body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
       xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://www.docusign.net/API/3.0/PingResponse</wsa:Action><wsa:MessageID>urn:uuid:2021c128-9b44-4787-bcae-8d168c3875a6</wsa:MessageID><wsa:RelatesTo>urn:uuid:498b116c-82df-4b61-ba00-3dd1db785ca6</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
-      wsu:Id="Timestamp-4f9fab4b-3266-45e1-bdab-fa2aa3fb51ea"><wsu:Created>2012-02-21T03:41:49Z</wsu:Created><wsu:Expires>2012-02-21T03:46:49Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><PingResponse
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://www.docusign.net/API/3.0/PingResponse</wsa:Action><wsa:MessageID>urn:uuid:e8756bca-70f4-4027-85cc-3fdbb9132939</wsa:MessageID><wsa:RelatesTo>urn:uuid:497b3002-03a4-49d5-98a7-b0267ac9b40c</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+      wsu:Id="Timestamp-9eacd55f-58fb-4b76-bce7-71b440ae3bec"><wsu:Created>2012-02-21T04:40:42Z</wsu:Created><wsu:Expires>2012-02-21T04:45:42Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><PingResponse
       xmlns="http://www.docusign.net/API/3.0"><PingResult>true</PingResult></PingResponse></soap:Body></soap:Envelope>
     http_version: '1.1'

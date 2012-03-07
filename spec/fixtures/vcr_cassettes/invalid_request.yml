@@ -8,7 +8,7 @@
       xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.docusign.net/API/3.0"><env:Header><wsse:Security
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
       wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b]6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</wsse:Username><wsse:Password
-      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">roomorama</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAndSendEnvelope><ins0:Envelope><ins0:TransactionID>Test1321517761</ins0:TransactionID><ins0:Asynchronous>false</ins0:Asynchronous><ins0:AccountId>678cce00-95a7-4279-9101-557b3868d7aa</ins0:AccountId><ins0:Documents></ins0:Documents><ins0:Recipients></ins0:Recipients><ins0:Tabs></ins0:Tabs><ins0:Notification></ins0:Notification></ins0:Envelope></ins0:CreateAndSendEnvelope></env:Body></env:Envelope>
+      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">roomorama</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAndSendEnvelope><ins0:Envelope><ins0:TransactionID>Test1329799229</ins0:TransactionID><ins0:Asynchronous>false</ins0:Asynchronous><ins0:AccountId>678cce00-95a7-4279-9101-557b3868d7aa</ins0:AccountId><ins0:Documents></ins0:Documents><ins0:Recipients></ins0:Recipients><ins0:Tabs></ins0:Tabs><ins0:Notification></ins0:Notification></ins0:Envelope></ins0:CreateAndSendEnvelope></env:Body></env:Envelope>
     headers:
       x-docusign-authentication:
       - <DocuSignCredentials><Username>6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</Username><Password>roomorama</Password><IntegratorKey>ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b</IntegratorKey></DocuSignCredentials>
@@ -36,16 +36,16 @@
       x-powered-by:
       - ASP.NET
       date:
-      - Thu, 17 Nov 2011 08:16:01 GMT
+      - Tue, 21 Feb 2012 04:40:30 GMT
       set-cookie:
-      - BIGipDocuSign=1423485120.47873.0000; path=/
+      - BIGipDocuSign=1440262336.47873.0000; path=/
       vary:
       - Accept-Encoding
     body: ! '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
       xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action><wsa:MessageID>urn:uuid:08f04c1b-e651-4565-8a1f-7afc20cb5a0d</wsa:MessageID><wsa:RelatesTo>urn:uuid:c98cc33e-5034-40d7-b53c-ec4c3d4ded83</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
-      wsu:Id="Timestamp-c5195854-5592-4d54-8567-f0aee19acc82"><wsu:Created>2011-11-17T08:16:02Z</wsu:Created><wsu:Expires>2011-11-17T08:21:02Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><soap:Fault><faultcode>soap:Client</faultcode><faultstring>Validation
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action><wsa:MessageID>urn:uuid:2fd87f14-edf8-4b93-812c-3a5d84a371e6</wsa:MessageID><wsa:RelatesTo>urn:uuid:d162492d-1f97-4233-90af-7d7c09905d66</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+      wsu:Id="Timestamp-66c820e6-af0c-4d96-8a37-009dafed6c78"><wsu:Created>2012-02-21T04:40:30Z</wsu:Created><wsu:Expires>2012-02-21T04:45:30Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><soap:Fault><faultcode>soap:Client</faultcode><faultstring>Validation
       error: The element ''Documents'' in namespace ''http://www.docusign.net/API/3.0''
       has incomplete content. List of possible elements expected: ''Document'' in
       namespace ''http://www.docusign.net/API/3.0''.</faultstring><detail /></soap:Fault></soap:Body></soap:Envelope>'
