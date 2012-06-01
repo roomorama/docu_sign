@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rails", ">= 3.0.10"
   s.add_development_dependency "capybara"
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "ruby-debug19"
+  s.add_development_dependency "debugger"
   s.add_development_dependency "webmock", ">= 1.7.0"
   s.add_development_dependency "savon_spec", ">= 0.1.6"
   s.add_development_dependency "vcr"

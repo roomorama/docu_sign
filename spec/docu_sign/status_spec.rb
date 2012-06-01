@@ -12,26 +12,52 @@ describe "Status and Managing functions" do
   describe "request_envelope" do
     use_vcr_cassette :request_envelope
     before do
-      @envelope_id = create_docusign_envelope
+      @envelope = create_docusign_envelope
     end
 
     it "should correctly retrieve an envelope given an envelope id" do
-      @envelope = @client.request_envelope({"EnvelopeID" => @envelope_id, "IncludeDocumentBytes" => "false"})
-      @envelope.should be_an_instance_of(DocuSign::Envelope)
+      envelope = @client.request_envelope({"EnvelopeID" => @envelope.envelope_id, "IncludeDocumentBytes" => "false"})
+      envelope.should be_an_instance_of(DocuSign::Envelope)
     end
   end
   
   describe "request_status" do
     use_vcr_cassette :request_status
     before do
-      @envelope_id = create_docusign_envelope
+      @envelope = create_docusign_envelope
     end
     
     it "should correctly retrieve an envelope status given an envelope id" do
-      @envelope_status = @client.request_status(:envelope_id => @envelope_id)
+      @envelope_status = @client.request_status(:envelope_id => @envelope.envelope_id)
       @envelope_status.recipient_statuses.first.status.should eq("Sent")
     end
   end
+  
+  describe "request_status_ex" do
+    use_vcr_cassette :request_status_ex
+    before do
+      @envelope = create_docusign_envelope
+    end
+    
+    it "should correctly retrieve the extended status given an envelope id" do
+      @envelope_status = @client.request_status_ex(:envelope_id => @envelope.envelope_id)
+      @envelope_status.recipient_statuses.first.status.should eq("Sent")
+    end
+  end
+  
+  describe "request_statuses" do
+    use_vcr_cassette :request_statuses, :record => :new_episodes
+    before do
+      @envelope = create_docusign_envelope
+      @envelope2 = create_docusign_envelope
+    end
+    
+    it "should correctly retrieve both envelope statuses" do
+      @envelope_statuses = @client.request_statuses(:envelope_status_filter => {"AccountId" => "678cce00-95a7-4279-9101-557b3868d7aa", "EnvelopeIds" => {"EnvelopeId" => [@envelope.envelope_id, @envelope2.envelope_id]}})
+      puts @envelope_statuses.inspect
+    end
+  end
+      
 
   describe "void_envelope" do
     use_vcr_cassette :void_envelope
@@ -118,7 +144,7 @@ describe "Status and Managing functions" do
           :ignore_if_not_present => false
         }
     end
-    return @client.create_and_send_envelope(envelope).envelope_id
+    return @client.create_and_send_envelope(envelope)
   end
 
 end
