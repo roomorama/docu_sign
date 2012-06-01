@@ -23,7 +23,7 @@ module DocuSign
         "YOffset" => self.y_offset,
         "Unit" => self.unit,
         "IgnoreIfNotPresent" => self.ignore_if_not_present?
-      }
+      }.delete_if{|key, value| value.nil?}
     end
   end
 end
