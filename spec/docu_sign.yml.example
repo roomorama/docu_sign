@@ -1,0 +1,4 @@
+username: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+password: "xxxxxxxxxx"
+integrator_key: "XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+endpoint_url: "https://demo.docusign.net/api/3.0/api.asmx"

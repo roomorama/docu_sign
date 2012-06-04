@@ -25,6 +25,8 @@ ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__
 require 'webmock/rspec'
 require 'vcr'
 
+DOCU_SIGN_CONFIG = HashWithIndifferentAccess.new(YAML.load_file(File.join(File.dirname(__FILE__), "docu_sign.yml")))
+
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}

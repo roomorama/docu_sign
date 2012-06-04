@@ -7,8 +7,8 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://www.docusign.net/API/3.0"
       xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.docusign.net/API/3.0"><env:Header><wsse:Security
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
-      wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b]6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</wsse:Username><wsse:Password
-      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">roomorama</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAndSendEnvelope><ins0:Envelope><ins0:TransactionID>Test1329799230</ins0:TransactionID><ins0:Asynchronous>false</ins0:Asynchronous><ins0:AccountId>678cce00-95a7-4279-9101-557b3868d7aa</ins0:AccountId><ins0:Documents><ins0:Document><wsdl:ID>1</wsdl:ID><wsdl:Name>Document</wsdl:Name><wsdl:PDFBytes>JVBERi0xLjQNJeLjz9MNCjYgMCBvYmo8PC9IWzUxNiAxNDFdL0xpbmVhcml6
+      wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx]xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</wsse:Username><wsse:Password
+      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">xxxxxxxxxx</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:CreateAndSendEnvelope><ins0:Envelope><ins0:TransactionID>Test1329799230</ins0:TransactionID><ins0:Asynchronous>false</ins0:Asynchronous><ins0:AccountId>678cce00-95a7-4279-9101-557b3868d7aa</ins0:AccountId><ins0:Documents><ins0:Document><wsdl:ID>1</wsdl:ID><wsdl:Name>Document</wsdl:Name><wsdl:PDFBytes>JVBERi0xLjQNJeLjz9MNCjYgMCBvYmo8PC9IWzUxNiAxNDFdL0xpbmVhcml6
 
       ZWQgMS9FIDQ1MzQvTCA4MzU3L04gMS9PIDkvVCA4MTkxPj4NZW5kb2JqDSAg
 
@@ -507,7 +507,7 @@
       Envelope</ins0:Subject><ins0:Notification><ins0:UseAccountDefaults>false</ins0:UseAccountDefaults><ins0:Reminders><ins0:ReminderEnabled>true</ins0:ReminderEnabled><ins0:ReminderDelay>2</ins0:ReminderDelay><ins0:ReminderFrequency>2</ins0:ReminderFrequency></ins0:Reminders><ins0:Expirations><ins0:ExpireEnabled>true</ins0:ExpireEnabled><ins0:ExpireAfter>10</ins0:ExpireAfter><ins0:ExpireWarn>2</ins0:ExpireWarn></ins0:Expirations></ins0:Notification></ins0:Envelope></ins0:CreateAndSendEnvelope></env:Body></env:Envelope>'
     headers:
       x-docusign-authentication:
-      - <DocuSignCredentials><Username>6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</Username><Password>roomorama</Password><IntegratorKey>ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b</IntegratorKey></DocuSignCredentials>
+      - <DocuSignCredentials><Username>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</Username><Password>xxxxxxxxxx</Password><IntegratorKey>XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</IntegratorKey></DocuSignCredentials>
       soapaction:
       - ! '"http://www.docusign.net/API/3.0/CreateAndSendEnvelope"'
       content-type:
@@ -559,11 +559,11 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://www.docusign.net/API/3.0"
       xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.docusign.net/API/3.0"><env:Header><wsse:Security
       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
-      wsu:Id="UsernameToken-2" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b]6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</wsse:Username><wsse:Password
-      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">roomorama</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:RequestEnvelope><ins0:EnvelopeID>b287b85e-ac57-454a-a476-3cc8630f586d</ins0:EnvelopeID><ins0:IncludeDocumentBytes>false</ins0:IncludeDocumentBytes></ins0:RequestEnvelope></env:Body></env:Envelope>
+      wsu:Id="UsernameToken-2" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx]xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</wsse:Username><wsse:Password
+      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">xxxxxxxxxx</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:RequestEnvelope><ins0:EnvelopeID>b287b85e-ac57-454a-a476-3cc8630f586d</ins0:EnvelopeID><ins0:IncludeDocumentBytes>false</ins0:IncludeDocumentBytes></ins0:RequestEnvelope></env:Body></env:Envelope>
     headers:
       x-docusign-authentication:
-      - <DocuSignCredentials><Username>6032ec74-7bcc-4b35-bbb9-3bf8a44484f4</Username><Password>roomorama</Password><IntegratorKey>ROOM-1206c237-cd8d-4f10-8ec5-d48b92a7e65b</IntegratorKey></DocuSignCredentials>
+      - <DocuSignCredentials><Username>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</Username><Password>xxxxxxxxxx</Password><IntegratorKey>XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</IntegratorKey></DocuSignCredentials>
       soapaction:
       - ! '"http://www.docusign.net/API/3.0/RequestEnvelope"'
       content-type:

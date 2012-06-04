@@ -4,3 +4,4 @@ Gemfile.lock
 pkg/*
 .idea
 .idea/*
+spec/docu_sign.yml
