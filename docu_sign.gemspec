@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = DocuSign::VERSION
   s.authors     = ["Donald Piret"]
   s.email       = ["donald@donaldpiret.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/roomorama/docu_sign"
   s.summary     = %q{DocuSign API gem}
   s.description = %q{Savon-based gem to interact with the DocuSign SOAP API in Ruby}
   s.license = "MIT"
