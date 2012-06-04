@@ -12,8 +12,8 @@ module DocuSign
         when :request_status_ex_response
           return EnvelopeStatus.new(response.to_hash[:request_status_ex_response][:request_status_ex_result])
         when :request_statuses_response
-          return response.to_hash[:request_statuses_response][:request_statuses_result][:envelope_statuses].map {|envelope_status_attributes| 
-            puts envelope_status_attributes.inspect
+          #puts response.to_hash.inspect
+          return response.to_hash[:request_statuses_response][:request_statuses_result][:envelope_statuses][:envelope_status].map {|envelope_status_attributes| 
             EnvelopeStatus.new(envelope_status_attributes)}
         when :request_envelope_response
           return Envelope.new(response.to_hash[:request_envelope_response][:request_envelope_result])
