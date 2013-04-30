@@ -1,50 +1,56 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :post
-    uri: https://demo.docusign.net:443/api/3.0/api.asmx
-    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://www.docusign.net/API/3.0"
-      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.docusign.net/API/3.0"><env:Header><wsse:Security
-      xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
-      wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx]xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</wsse:Username><wsse:Password
-      Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">xxxxxxxxxx</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:Ping></ins0:Ping></env:Body></env:Envelope>
+http_interactions:
+- request:
+    method: post
+    uri: https://demo.docusign.net/api/3.0/api.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://www.docusign.net/API/3.0"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://www.docusign.net/API/3.0"><env:Header><wsse:Security
+        xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken
+        wsu:Id="UsernameToken-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsse:Username>[XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx]xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</wsse:Username><wsse:Password
+        Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">xxxxxxxxxx</wsse:Password></wsse:UsernameToken></wsse:Security></env:Header><env:Body><ins0:Ping></ins0:Ping></env:Body></env:Envelope>
     headers:
-      x-docusign-authentication:
+      X-Docusign-Authentication:
       - <DocuSignCredentials><Username>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</Username><Password>xxxxxxxxxx</Password><IntegratorKey>XXXX-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</IntegratorKey></DocuSignCredentials>
-      soapaction:
+      Soapaction:
       - ! '"http://www.docusign.net/API/3.0/Ping"'
-      content-type:
+      Content-Type:
       - text/xml;charset=UTF-8
-      content-length:
+      Content-Length:
       - '919'
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      cache-control:
+      Cache-Control:
       - private, max-age=0
-      content-length:
+      Content-Length:
       - '1135'
-      content-type:
+      Content-Type:
       - text/xml; charset=utf-8
-      server:
+      Server:
       - Microsoft-IIS/7.5
-      x-aspnet-version:
+      X-Aspnet-Version:
       - 2.0.50727
-      x-powered-by:
+      X-Powered-By:
       - ASP.NET
-      date:
+      Date:
       - Tue, 21 Feb 2012 04:40:42 GMT
-      set-cookie:
+      Set-Cookie:
       - BIGipDocuSign=1423485120.47873.0000; path=/
-      vary:
+      Vary:
       - Accept-Encoding
-    body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-      xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://www.docusign.net/API/3.0/PingResponse</wsa:Action><wsa:MessageID>urn:uuid:e8756bca-70f4-4027-85cc-3fdbb9132939</wsa:MessageID><wsa:RelatesTo>urn:uuid:497b3002-03a4-49d5-98a7-b0267ac9b40c</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
-      wsu:Id="Timestamp-9eacd55f-58fb-4b76-bce7-71b440ae3bec"><wsu:Created>2012-02-21T04:40:42Z</wsu:Created><wsu:Expires>2012-02-21T04:45:42Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><PingResponse
-      xmlns="http://www.docusign.net/API/3.0"><PingResult>true</PingResult></PingResponse></soap:Body></soap:Envelope>
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+        xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><soap:Header><wsa:Action>http://www.docusign.net/API/3.0/PingResponse</wsa:Action><wsa:MessageID>urn:uuid:e8756bca-70f4-4027-85cc-3fdbb9132939</wsa:MessageID><wsa:RelatesTo>urn:uuid:497b3002-03a4-49d5-98a7-b0267ac9b40c</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+        wsu:Id="Timestamp-9eacd55f-58fb-4b76-bce7-71b440ae3bec"><wsu:Created>2012-02-21T04:40:42Z</wsu:Created><wsu:Expires>2012-02-21T04:45:42Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><PingResponse
+        xmlns="http://www.docusign.net/API/3.0"><PingResult>true</PingResult></PingResponse></soap:Body></soap:Envelope>
     http_version: '1.1'
+  recorded_at: Tue, 30 Apr 2013 07:44:47 GMT
+recorded_with: VCR 2.4.0
