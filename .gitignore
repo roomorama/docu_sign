@@ -5,3 +5,4 @@ pkg/*
 .idea
 .idea/*
 spec/docu_sign.yml
+spec/dummy/log/*.log

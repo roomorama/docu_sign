@@ -26,7 +26,7 @@ module DocuSign
         "Type" => self.type,
         "AccessCode" => self.access_code,
         "AddAccessCodeToEmail" => self.add_access_code_to_email,
-        "RequireIDLookup" => self.require_id_lookup,
+        "RequireIDLookup" => self.require_id_lookup?,
         "IDCheckConfigurationName" => self.id_check_configuration_name,
         "LiveIDRecipientAuthentication" => self.live_id_recipient_authentication,
         "FacebookRecipientAuthentication" => self.facebook_recipient_authentication,
